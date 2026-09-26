@@ -4,13 +4,20 @@ import Image from 'next/image';
 import styles from './RestaurantCard.module.css';
 import { useState } from 'react';
 
-export default function RestaurantCard({ name, slug, location, image, isNew = false }) {
+
+
+
+
+
+export default function RestaurantCard({name, slug, location, image, isNew = false }) {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
         <Link href={`/restaurant/${slug}`}>
+
+
         <Image
           src={image}
           alt={name}
