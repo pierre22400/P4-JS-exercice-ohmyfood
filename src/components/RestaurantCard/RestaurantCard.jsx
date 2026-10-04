@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 
 
-export default function RestaurantCard({name, slug, location, image, isNew = false }) {
+export default function RestaurantCard({ name, slug, location, image, isNew = false }) {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
@@ -18,31 +18,31 @@ export default function RestaurantCard({name, slug, location, image, isNew = fal
         <Link href={`/restaurant/${slug}`}>
 
 
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className={styles.image}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className={styles.image}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
         </Link>
         {isNew && <span className={styles.newBadge}>Nouveau</span>}
       </div>
       <div className={styles.content}>
         <Link href={`/restaurant/${slug}`}>
-        <h3 className={styles.name}>{name}</h3>
-        <p className={styles.location}>{location}</p>
+          <h3 className={styles.name}>{name}</h3>
+          <p className={styles.location}>{location}</p>
         </Link>
       </div>
-      <button 
+      <button
         className={`${styles.favoriteButton} ${isLiked ? styles.liked : ''}`}
         onClick={() => setIsLiked(!isLiked)}
         aria-label={isLiked ? "Retirer des favoris" : "Ajouter aux favoris"}
       >
-        <svg 
-          viewBox="0 0 24 24" 
-          fill={isLiked ? "url(#gradient)" : "none"} 
-          stroke="currentColor" 
+        <svg
+          viewBox="0 0 24 24"
+          fill={isLiked ? "url(#gradient)" : "none"}
+          stroke="currentColor"
           strokeWidth="2"
           className={styles.heartIcon}
         >
