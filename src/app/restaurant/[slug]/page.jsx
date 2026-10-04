@@ -13,9 +13,9 @@ export default async function RestaurantPage({
         (currentRestaurant) =>
             currentRestaurant.slug === slug
     );
-if (!restaurant) {
-  notFound();
-}
+    if (!restaurant) {
+        notFound();
+    }
     return (
         <>
             <div className="heroImage">
